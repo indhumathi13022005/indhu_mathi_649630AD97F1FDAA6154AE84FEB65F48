@@ -1,24 +1,24 @@
-#1.1 Implement a recurcive function to calculate the factorial of given number
-
 """
-1! = 1 * 1
-2! = 2 * 1!___> 2 * 1
-3! = 3 * 2!___> 3* 2 * 1
-.
-.
-10!= 10 * 9!___> 10 * 9 * 8*___* 1
-
-Formula - n * (n-1)!
+write a function called linear_search_product that takes the list of products and a target product
+name as input.The function should perform a linear search to find the target product in the list and
+return a list of indices of all occurrences of the product if found,or an empty list if the product is not
+found.
 """
 
 
-def fact_rec(n):
-  if n==0 or n==1:
-    return 1
-  else:
-    return n*fact_rec(n-1)
+def linearSearchProduct(productList,targetProduct):
+   indices = []
 
-number = int(input ("Enter the value:"))
-rec = fact_rec(number)
+   for index,product in enumerate(productList):
+     if product == targetProduct:
+       indices.append(index)
 
-print("The factorial of {} is {} .". format(number ,rec))
+   return indices
+
+
+# Example Usage:
+products = ["shoes","boot","loafer","shoes","sandal","shoes"]
+target = "shoes"
+target2 = 'apple'
+result = linearSearchProduct(products,target)
+print(result)
